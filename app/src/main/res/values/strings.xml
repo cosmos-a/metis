@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Metis</string>
+    <string name="action_settings">Settings</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="how_to_use">You can get the wallpaper by pressing the button below.</string>
+    <string name="preview">Preview</string>
+    <string name="save">Save</string>
+    <string name="copyright">ⓒ 2017 Astro. All rights reserved.</string>
+    <string name="update">Update</string>
+    <string name="image_format">Image Format</string>
+    <string name="jpeg">JPEG</string>
+    <string name="png">PNG</string>
+    <string name="settings">Settings</string>
+</resources>
