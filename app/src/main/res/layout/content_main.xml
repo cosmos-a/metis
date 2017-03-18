@@ -78,9 +78,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
-                        android:paddingBottom="16dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
                         android:text="@string/how_to_use"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
@@ -90,10 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:onClick="updatePreview"
-                        android:paddingBottom="8dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:paddingTop="8dp"
+                        android:padding="8dp"
                         android:text="@string/update"/>
 
                 </LinearLayout>
