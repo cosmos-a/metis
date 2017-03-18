@@ -65,7 +65,10 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            startActivity(new Intent(this, AboutActivity.class));
+            return true;
+        } else if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingActivity.class));
             return true;
         }
@@ -91,10 +94,11 @@ public class MainActivity extends AppCompatActivity {
         if (bitmap != null) {
             if (isPermissionGranted) {
                 try {
-                    File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Metis/wallpapers/" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date(System.currentTimeMillis())) + ".jpeg");
+                    String format = getSharedPreferences("settings", MODE_PRIVATE).getString("image_format", "jpeg");
+                    File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Metis/" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date(System.currentTimeMillis())) + "." + format);
                     file.getParentFile().mkdirs();
                     FileOutputStream fileOutputStream = new FileOutputStream(file);
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                    bitmap.compress(format.equals("jpeg") ? Bitmap.CompressFormat.JPEG : Bitmap.CompressFormat.PNG, 100, fileOutputStream);
                     fileOutputStream.flush();
                     fileOutputStream.close();
                     Snackbar.make(view, "Save the wallpaper at " + file.getAbsolutePath() + ".", Snackbar.LENGTH_SHORT).show();
@@ -111,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
                         })
                         .show();
             }
+        } else {
+            Snackbar.make(view, "You have to get the wallpaper first.", Snackbar.LENGTH_SHORT).show();
         }
     }
 
