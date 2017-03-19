@@ -1,6 +1,7 @@
 package me.astro.metis;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -106,11 +107,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
                 }
             } else {
+                final Activity activity = this;
                 Snackbar.make(view, "You have to allow the permission for saving the wallpaper.", Snackbar.LENGTH_LONG)
                         .setAction("OK", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                ActivityCompat.requestPermissions(getParent(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                                ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                             }
                         })
                         .show();
