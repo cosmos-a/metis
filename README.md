@@ -50,4 +50,4 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
 
-Metis MealBot is licensed under the [GPL 3.0](./LICENSE).
+Metis is licensed under the [GPL 3.0](./LICENSE).
